@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <head><style>
+       p{
+        font-size: 60px;
+        color: black;
+       }
+       .form1{
+        display: flex;
+        flex-direction: column-reverse;
+        height: 30px;
+        width: 200px;
+        align-items: center;
+       }
+       form{
+        height:0;
+        padding-left:620px;
+        margin:30px;
+        background-color: whitesmoke;
+       }
+    </style>
+    </head>
+    <body style="background-color: #cfb088;">
+        <a href="/cra" style="font-size: 30px;">Already creator ?</a>
+        <form action ='/flexi' method="POST">
+            <p>NEW CREATOR PROFILE</p>
+            Username:<input type ='String' class='form1' name="name">
+            <br>
+            Gender:<input type ='String' class='form1' name="Gender">
+            <br>
+            Age:<input type="number" class="form1" name="age">
+            <br>
+            <button class="w-100 btn btn-lg btn-primary" type="submit">Update</button>
+        </form>
+    </body>
+</html>

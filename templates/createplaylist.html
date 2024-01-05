@@ -1,0 +1,53 @@
+<html>
+    <head>
+        <title>'Playlist'</title>
+        <style>
+            *{
+                margin: 0%;
+                padding: 0%;
+            }
+            .navbar{
+                display:flex;
+                align-items: center;
+                font-size: 20px;
+                background-color: black;
+                height:55px;
+                color: aliceblue;
+                font-family:Georgia, 'Times New Roman', Times, serif;
+            }
+            .navbar a {
+            margin-right: 20px;
+            color: white;
+            text-decoration: none;
+        }
+         body{
+            background-color: grey;
+         }
+         form{
+            font-size: 40px;
+            color: blanchedalmond;
+            margin-top: 20px;
+            margin-left: 540px;
+         }
+         button{
+            font-size: 25px;
+            background-color: aqua;
+            width: 90px;
+         }
+        </style>
+    </head>
+    <body>
+<form method="POST" action="/editaplay">
+    <div style="margin-left: 650px;">
+    Playlist Name:<input type="name" name="name" style="height: 35px; width:220px;"><br>
+    Username:<input type="name" name="Username" style="height: 35px; width:220px;">
+</div>
+    <h3>Select your songs</h3>
+    {% for names in data%}
+    <input type="checkbox" name="title[]" value="{{names[1]}}"> {{names[1]}}<br>
+    <input type="hidden" name="isk[]" value="{{names[0]}}">
+    {%endfor%}
+    <button type="submit">Submit</button>
+    </form>
+</body>
+</html>

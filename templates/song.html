@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>This song</title>
+        <style>
+            .lk{
+                background-color: bisque;
+                width:900px;
+                height:600px;
+                border-radius: 14px;
+                border-color: black;
+                border: 2px solid;
+                margin-top: 40px;
+                margin-left: 300px;
+            }
+            p{
+                font-family: Arial, Helvetica, sans-serif;
+                font-size: 20px;
+            }
+            #fg{
+                width:700px;
+                height:350px;
+                border-color: black;
+                border: 2px solid;
+                border-radius: 15px;
+                margin-top: 25px;
+                margin-left: 100px;
+            }
+
+        </style>
+    </head>
+    <body>
+        <div class="lk">
+            {% for item in data %}
+            <h1>{{ item[4]}}</h1>
+            <p>{{ item[2] }} | {{ item[3] }} | {{ item[5] }}</p>
+            <div>
+            <textarea id="fg">{{ item[6] }}</textarea></div>
+            {% else %}
+            <p>No details found in the database.</p>
+        {% endfor %}
+        </div>
+    </body>
+</html>

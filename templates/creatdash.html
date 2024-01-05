@@ -1,0 +1,145 @@
+<html>
+    <head>
+        <title>Users</title>
+        <style>
+            *{
+                margin:0;
+                padding:0;
+            }
+            .cv{
+                margin-top: 30px;
+                margin-left: 40px;
+                width:1400px;
+                height:40px;
+                border: 2px solid;
+                display: flex;
+                flex-direction: column;
+                font-size: 23px;
+                font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+                background-color:white;
+                border-radius: 10px;
+                position: relative;
+            }
+            .zx{
+                margin-top: 30px;
+                margin-left: 40px;
+                width:1400px;
+            }
+            .as{
+                margin-top: 50px;
+                margin-left: 40px;
+                background-color: whitesmoke;
+                height:300px;
+                width:1000px;
+                text-align: center;
+                border: 2px solid;
+            }
+            .er{
+                display: inline-block;
+                margin-top: 50px;
+                margin-left: 40px;
+                height:200px;
+                width:200px;
+                border: 2px solid;
+                border-radius: 20%;
+                background-color: pink;
+                font-size: large;
+            }
+            .navbar{
+                display:flex;
+                align-items: center;
+                background-color: black;
+                height:55px;
+                color: aliceblue;
+                font-family:Georgia, 'Times New Roman', Times, serif;
+            }
+            #sd{
+                flex: 1;
+                height: 30px;
+                margin-left: 920px;
+            }
+            body{
+                background-color: #55dac466;
+            }
+            p{  margin-top: 20px;
+                font-size:30px;
+            }
+            .hj{
+                margin-top: 4px;
+                margin-left: 1150px;
+             position: absolute;
+            }
+            #sp{
+                margin-top: 6px;
+                margin-left:40px;
+                color: black;
+                font-size: 25px;
+            }
+            a
+            {
+                padding-right:35px;
+            font-size: 18px;
+            text-decoration: none;
+            color: whitesmoke;}
+            #at
+            { 
+            font-size: 50px;
+            text-decoration: none;
+            color: green;}
+        </style>
+    </head>
+    <body>
+        <div class="navbar">
+            <a style="color: brown;" href="/index">Homepage</a>
+            <a href="/upload">Upload</a>
+            <a href="/harshu">User's Page</a>
+            <a href="/albumd">Albums</a>
+            <a href="/logout">Logout</a>
+        </div>
+        <div class="as" method="GET">
+            <div class="er">
+              <p>Total Uploades</p>
+               {% for item in data1 %}
+                <a id="at">{{ item[0] }}
+                </a>
+                {% endfor%}
+            </div>
+            <div class="er">
+                <p>Average Rating</p>
+                {% for item in data3 %}
+                <a id="at">{{ item[0] }}</a>
+                {% endfor%}
+             </div>
+             <div class="er">
+                <p>Total Album</p>
+                {% for item in data4 %}
+                <a id="at">{{ item[0] }}</a>
+                {% endfor%}
+             </div>
+        </div>
+        <h1 style="padding-top: 40px;">YOUR UPLOADS</h1>
+        <div class="zx">
+            {% for items in data2 %}
+                <div class="cv"><a id='sp'>{{ items[1] }}</a>
+                    <form class="hj" action="/creatorsee" method="POST">
+                    <input type='hidden' name='craetorse' value='{{ items[1] }}'>
+                    <button type='submit' name='view_butto' style="font-size: 25px; background-color: aqua; width:70px;">View</button>
+                    <button type='submit' name='edit_butto' style="font-size: 25px; background-color: aqua; width:70px;">Edit</button>
+                    <button type='submit' name='delete_butto' style="font-size: 25px; background-color: aqua; width:75px;">Delete</button></form>
+                </div>
+                {% endfor%}
+        </div>
+        <h1 style="padding-top: 40px;">YOUR ALBUMS</h1>
+        <div class="zx">
+            {% for items in data5 %}
+                <div class="cv"><a id='sp'>{{ items[0] }}</a>
+                    <form class="hj" action="/albumedit" method="POST">
+                    <input type='hidden' name='name' value='{{ items[0] }}'>
+                    <button type='submit' name='view_butto' style="font-size: 25px; background-color: aqua; width:70px;">View</button>
+                    <button type='submit' name='edit_butto' style="font-size: 25px; background-color: aqua; width:70px;">Edit</button>
+                    <button type='submit' name='delete_butto' style="font-size: 25px; background-color: aqua; width:75px;">Delete</button></form>
+                </div>
+                {% endfor%}
+        </div>
+    </body>
+</html>

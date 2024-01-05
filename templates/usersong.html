@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>This song</title>
+        <style>
+            form{
+                margin-top: 10px;
+                margin-left: 500px;
+                color: black;
+                font-size: 25px;
+            }
+            .lk{
+                background-color: bisque;
+                width:900px;
+                height:600px;
+                border-radius: 14px;
+                border-color: black;
+                border: 2px solid;
+                margin-top: 40px;
+                margin-left: 300px;
+            }
+            p{
+                font-family: Arial, Helvetica, sans-serif;
+                font-size: 20px;
+            }
+            #fg{
+                width:700px;
+                height:350px;
+                border-color: black;
+                border: 2px solid;
+                border-radius: 15px;
+                margin-top: 25px;
+                margin-left: 100px;
+            }
+
+        </style>
+    </head>
+    <body>
+        <div class="lk">
+            {% for item in data %}
+            <h1>{{ item[4]}}</h1>
+            <p>{{ item[3] }} | {{ item[2] }} | {{ item[5] }}</p>
+            <div>
+            <textarea id="fg">{{ item[6] }}</textarea></div>
+            <form action="/Ratingsofsong" method="POST">
+                <a>Rate Song:</a>
+                <input type="hidden" name="Username" value="{{ item[1]}}">
+                <input type="hidden" name="title" value="{{ item[4]}}">
+                1<input type="radio" name="rate" value="1">
+                2<input type="radio" name="rate" value="2">
+                3<input type="radio" name="rate" value="3">
+                4<input type="radio" name="rate" value="4">
+                5<input type="radio" name="rate" value="5">
+                <button type="submit"> Submit </button>
+            </form>
+            {% else %}
+            <p>No details found in the database.</p>
+        {% endfor %}
+        </div>
+    </body>
+</html>

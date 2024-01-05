@@ -1,0 +1,51 @@
+<html>
+    <head>
+        <title>all songs</title>
+        <style>
+            body{
+                background-color: greenyellow;
+            }
+            .cv{
+                margin-top: 1px;
+                margin-left: 580px;
+                width:440px;
+                height:40px;
+                border: 2px solid;
+                display: flex;
+                flex-direction: column;
+                font-size: 23px;
+                font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+                background-color:white;
+                border-radius: 10px;
+                position: relative;
+            }
+            .hj{
+                margin-top: 4px;
+                margin-left: 270px;
+             position: absolute;
+            }
+            #sp{
+                margin-top: 6px;
+                margin-left:40px;
+                color: black;
+                font-size: 25px;
+            }
+            #ui{
+                margin-left: 30px;
+                font-size: 30px;
+            }
+        </style>
+    </head>
+<body>
+<h1 style="padding-top: 40px;">ALL SONGS</h1>
+        <div class="zx" method="GET">
+            {% for items in data %}
+                <div class="cv"><a id='sp'>{{ items[0]}}</a>
+                    <form class="hj" action="/Songs" method="POST">
+                    <input type='hidden' name='title' value='{{ items[0] }}'>
+                    <button type='submit' name='view_butto' style="font-size: 25px; background-color: aqua; width:150px;">View Lyrics</button>
+                </form>
+                </div>
+                {% endfor%}
+        </div>
+</body></html>

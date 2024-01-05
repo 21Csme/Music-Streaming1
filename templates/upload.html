@@ -1,0 +1,69 @@
+<html>
+    <head>
+        <title>Uploads</title>
+        <style>
+            *{
+                margin:0;
+                padding:0;
+             
+            }
+            form{
+                font-size: 26px;
+                margin-top: 10px;
+                margin-left: 500px;
+                width:600px;
+            }
+            .qwer{
+                display:flex;
+                flex-direction: column;
+            }
+            .navbar{
+                display:flex;
+                align-items: center;
+                background-color: black;
+                height:50px;
+                color: aliceblue;
+                font-family:Georgia, 'Times New Roman', Times, serif;
+            }
+            body{
+                background-color: #bada5566;
+            }
+            button{
+                height: 40px;
+                width: 600px;
+                background-color: brown;
+            }
+            a
+            {
+                padding-right:35px;
+            font-size: 18px;
+            text-decoration: none;
+            color: whitesmoke;}
+            #ou{
+                height: 36px;
+            }
+            #iu{
+                height:160px;
+           
+            }
+        </style>
+    </head>
+    <body>
+        <div class="navbar">
+            <a style="color: brown;">Upload Songs</a>
+            <a href="/cra">Dashboard</a>
+            <a href="/harshu">User's Page </a>
+            <a href="">Albums</a>
+            <a href="/logout">Logout</a>
+        </div>
+            <form class="qwer" action="/songstore" method="POST">
+                Username:<input type="text" id="ou" name="Username"><br>
+                Creator Name:<input type="text" id="ou" name="Creator"><br>
+                Genre:<input type="text" id="ou" name="Genre"><br>
+                Song Title:<input type="text" id="ou" name="title"><br>
+                Year Added:<input type="year" id="ou" name="Date"><br>
+                Lyrics:<textarea id="iu" type="String" name="Lyrics"></textarea><br>
+                <button type="submit">Upload</button>
+            </form>
+    </body>
+</html>

@@ -1,0 +1,55 @@
+<html>
+    <head>
+        <title>all songs</title>
+        <style>
+            *{
+                margin: 0px;
+                padding: 0px;
+            }
+            body{
+                background-color: palevioletred;
+            }
+            .cv{
+                margin-top: 1px;
+                margin-left: 40px;
+                width:1400px;
+                height:40px;
+                border: 2px solid;
+                display: flex;
+                flex-direction: column;
+                font-size: 23px;
+                font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+                background-color:white;
+                border-radius: 10px;
+                position: relative;
+            }
+            .hj{
+                margin-top: 4px;
+                margin-left: 1050px;
+             position: absolute;
+            }
+            #sp{
+                margin-top: 6px;
+                margin-left:40px;
+                color: black;
+                font-size: 25px;
+            }
+            a{
+                font-size: 30px;
+                color: blue;
+            }
+        </style>
+    </head>
+<body>
+<h1 style="padding-top: 40px;">YOUR PLAYLIST</h1>
+        <div class="zx" style="background-color: blueviolet;" method="GET">
+                {% for items in data %}
+                    <div class="cv"><a id='sp'>{{ items[0] }}</a>
+                        <form class="hj" action="/playlistedit" method="POST">
+                        <input type='hidden' name='name' value='{{ items[0] }}'>
+                        <button type='submit' name='view_butto' style="font-size: 25px; background-color: aqua; width:70px;">View</button>
+                        <button type='submit' name='delete_butto' style="font-size: 25px; background-color: aqua; width:75px;">Delete</button></form>
+                    </div>
+                    {% endfor%}
+            </div>
+</body></html>

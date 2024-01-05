@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head><style>
+       p{
+        font-size: 60px;
+        color: black;
+       }
+       .form1{
+        display: flex;
+        flex-direction: column-reverse;
+        height: 30px;
+        width: 200px;
+        align-items: center;
+       }
+       form{
+        height:0;
+        padding-left:620px;
+        margin:30px;
+        background-color: whitesmoke;
+       }
+    </style>
+    </head>
+    <body style="background-color: #cfb088;">
+        <form action ='/login-action' method="POST">
+            <p>SIGN-IN</p>
+            Email:<input type ='email' class='form1' name="email">
+            <br>
+            Password:<input type="password" class='form1' name="password">
+            <br>
+            <button class="w-100 btn btn-lg btn-primary" type="submit">Sign in</button>
+        </form>
+    </body>
+</html>
